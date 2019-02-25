@@ -3,7 +3,8 @@ import argparse
 import os
 import sys
 import datetime
-import pprint
+import hashlib
+import json
 
 
 def get_arguments():
@@ -53,12 +54,58 @@ def group_files_by_size(file_path_names):
         except KeyError:
             group_by_size[key] = list()
             group_by_size[key].append(_file)
-    print(group_by_size)
     for keys, values in group_by_size.items():
-        print(keys)
-        print(values)
-        result_group.append(list([values]))
-    return group_by_size
+        if len(values) > 1:
+            result_group.append(list(value for value in values))
+        # temp = list()
+        # for value in values:
+        #     temp.append(value)
+        # result_group.append(temp)
+    return result_group
+
+
+def get_file_checksum(file_path_name):
+    if path_valid(file_path_name):
+        with open(file_path_name, "rb") as fd:
+            content = fd.read()
+            h = hashlib.md5()
+            h.update(content)
+        return h.hexdigest()
+
+
+def group_files_by_checksum(file_path_names):
+    result_group = list()
+    group_by_checksum = dict()
+    for _file in file_path_names:
+        stat = os.stat(_file)
+        key = get_file_checksum(_file)
+        if stat.st_size == 0:
+            continue
+        if key:
+            try:
+                group_by_checksum[key].append(_file)
+            except KeyError:
+                group_by_checksum[key] = list()
+                group_by_checksum[key].append(_file)
+    for keys, values in group_by_checksum.items():
+        if len(values) > 1:
+            result_group.append(list(value for value in values))
+    return result_group
+
+
+def find_duplicate_files(file_path_names):
+    tmp = list()
+    group_by_size = group_files_by_size(file_path_names)
+    if len(group_by_size) > 0:
+        for group in group_by_size:
+            for _file in group:
+                tmp.append(_file)
+    if len(tmp) > 0:
+        return group_files_by_checksum(tmp)
+
+
+def json_dump(data):
+    return json.dumps(data)
 
 
 def main():
@@ -66,9 +113,16 @@ def main():
     path = args.path
     show_hidden = args.hidden
     list_of_files = scan_files(path, show_hidden)
-    print(list_of_files)
-    group_by_size = group_files_by_size(list_of_files)
-    print(group_by_size)
+    # print(list_of_files)
+    # group_by_size = group_files_by_size(list_of_files)
+    # group_by_checksum = group_files_by_checksum(list_of_files)
+    # print(group_by_size)
+    # print(group_by_checksum)
+    result = find_duplicate_files(list_of_files)
+    print(result)
+    print(type(result))
+    print(json_dump(result))
+    print(type(json_dump(result)))
 
 
 if __name__ == '__main__':
