@@ -1,0 +1,22 @@
+Time: 2019-02-26 13:54:22.633112
+List hashes by size:
+{0: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/another_module_error.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/README.md'], 3: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi'], 3591: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/another.py'], 4186: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/find_duplicate_files.py'], 684: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], 117066: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hahaha.png'], 2926: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/__pycache__/another.cpython-35.pyc']}
+List hashes on 1k:
+{'e0236b4235e7322eae9a273bbec8dce5': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/another_module_error.log'], '9f84197b4d6843987de58cff0dd8c316': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], '7815696ecbf1c96e6894b779456d330e': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi'], 'd41d8cd98f00b204e9800998ecf8427e': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/README.md']}
+List hashes by full content:
+{'9f84197b4d6843987de58cff0dd8c316': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], '7815696ecbf1c96e6894b779456d330e': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi']}
+Result list:
+[['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi']]
+<===============================END-OF-MESSAGE===============================>
+
+Time: 2019-02-26 13:54:22.952620
+List hashes by size:
+{0: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/README.md'], 3: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi'], 3591: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/another.py'], 2329: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/another_module_error.log'], 4186: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/find_duplicate_files.py'], 684: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], 117066: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hahaha.png'], 2926: ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/__pycache__/another.cpython-35.pyc']}
+List hashes on 1k:
+{'9f84197b4d6843987de58cff0dd8c316': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], '7815696ecbf1c96e6894b779456d330e': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi']}
+List hashes by full content:
+{'9f84197b4d6843987de58cff0dd8c316': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], '7815696ecbf1c96e6894b779456d330e': ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi']}
+Result list:
+[['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/asd.log', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/error.log'], ['/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/haha', '/mnt/c/Users/Administrator/Desktop/Work/duplicate_files_finder/hihi']]
+<===============================END-OF-MESSAGE===============================>
+

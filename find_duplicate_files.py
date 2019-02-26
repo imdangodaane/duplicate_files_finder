@@ -5,6 +5,7 @@ import sys
 import datetime
 import hashlib
 import json
+import another
 
 
 def get_arguments():
@@ -32,12 +33,16 @@ def scan_files(path, show_hidden):
     if path_valid(path):
         list_of_files = list()
         for (dir_path, dir_names, file_names) in os.walk(path):
-            if not show_hidden:
-                file_names = [f for f in file_names if not f[0] == '.']
-                dir_names[:] = [d for d in dir_names if not d[0] == '.']
-            for file_name in file_names:
-                if not os.path.islink(os.path.join(dir_path, file_name)):
-                    list_of_files += [os.path.join(dir_path, file_name)]
+            try:
+                if not show_hidden:
+                    file_names = [f for f in file_names if not f[0] == '.']
+                    dir_names[:] = [d for d in dir_names if not d[0] == '.']
+                for file_name in file_names:
+                    if not os.path.islink(os.path.join(dir_path, file_name)):
+                        full_path = os.path.realpath(os.path.join(dir_path, file_name))
+                        list_of_files += [full_path]
+            except OSError:
+                continue
         return list_of_files
 
 
@@ -118,11 +123,13 @@ def main():
     # group_by_checksum = group_files_by_checksum(list_of_files)
     # print(group_by_size)
     # print(group_by_checksum)
-    result = find_duplicate_files(list_of_files)
-    print(result)
-    print(type(result))
+    # result = find_duplicate_files(list_of_files)
+    # print(result)
+    # print(type(result))
+    # print(json_dump(result))
+    # print(type(json_dump(result)))
+    result = another.check_duplicates(list_of_files)
     print(json_dump(result))
-    print(type(json_dump(result)))
 
 
 if __name__ == '__main__':
