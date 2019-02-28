@@ -153,13 +153,13 @@ def json_dump(data):
 def main():
     """Main function operate program"""
     LIST_OF_FILES = []
-
     ARGS = get_arguments()
     PATH = ARGS.path
     SHOW_HIDDEN = ARGS.hidden
     BONUS = ARGS.bonus
 
     valid_path(PATH)
+
     LIST_OF_FILES = scan_files(PATH)
     if BONUS:
         RESULT = another.check_duplicates(LIST_OF_FILES)
@@ -167,7 +167,11 @@ def main():
         group_by_size = group_files_by_size(LIST_OF_FILES)
         group_by_checksum = group_files_by_checksum(LIST_OF_FILES)
         RESULT = find_duplicate_files(LIST_OF_FILES)
-    print(json_dump(RESULT))
+
+    if RESULT:
+        print(json_dump(RESULT))
+    else:
+        print("There are no duplicate files.")
 
 
 if __name__ == '__main__':
