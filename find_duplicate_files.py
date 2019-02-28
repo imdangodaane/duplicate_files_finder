@@ -196,7 +196,7 @@ def main():
     if RESULT:
         print(json_dump(RESULT))
     else:
-        print("There are no duplicate files.")
+        print("This path have no duplicate files.")
 
 
 if __name__ == '__main__':
