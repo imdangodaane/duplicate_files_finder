@@ -83,7 +83,7 @@ class GroupFilesBySizeTest(unittest.TestCase):
     def test_normal_group_by_size(self):
         # Change group in result to set for comparision
         result = [set(group) for group in
-                  df.group_files_by_size(self.LIST_OF_FILES)]
+                  fdf.group_files_by_size(self.LIST_OF_FILES)]
         # Duplicate files should be in result list
         expected = set(self.duplicate_files)
         self.assertIn(expected, result)
